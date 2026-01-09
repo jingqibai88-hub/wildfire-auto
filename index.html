@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>野火社 Auto Service Club｜扫码进群</title>
+  <meta name="description" content="野火社 Auto Service Club｜马来西亚留学生汽车俱乐部：扫码加入 WhatsApp 群聊。" />
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --panel: rgba(255,255,255,.07);
+      --border: rgba(255,255,255,.14);
+      --text:#f5f5f7;
+      --muted: rgba(245,245,247,.72);
+      --accent:#ff3b30;
+      --accent2:#ff9f0a;
+      --radius:18px;
+      --max:980px;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "PingFang SC","Microsoft YaHei", Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 520px at 25% -10%, rgba(255,59,48,.25), transparent 55%),
+        radial-gradient(900px 520px at 90% 0%, rgba(255,159,10,.18), transparent 55%),
+        var(--bg);
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px}
+    .top{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:12px 0 6px;
+    }
+    .brand{
+      font-weight:900; letter-spacing:.4px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .badge{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      padding:6px 10px; border-radius:999px;
+      display:inline-flex; align-items:center; gap:8px;
+      white-space:nowrap;
+    }
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: 1fr 1fr;
+      margin-top:12px;
+    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{
+      background: var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .poster img{
+      width:100%; border-radius:14px; display:block;
+      border:1px solid rgba(255,255,255,.10);
+    }
+    h1{margin:0 0 8px; font-size:34px; line-height:1.12}
+    .sub{color:var(--muted); margin:0 0 14px; line-height:1.65}
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 14px; border-radius:14px;
+      text-decoration:none; font-weight:800;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+    }
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#0b0b0f;
+    }
+    .qrWrap{
+      display:grid; place-items:center;
+      padding:18px;
+      background: rgba(0,0,0,.22);
+      border:1px dashed rgba(255,255,255,.18);
+      border-radius:16px;
+    }
+    #qrcode canvas, #qrcode img{border-radius:12px}
+    .hint{margin-top:10px; color:var(--muted); font-size:13px; text-align:center}
+    .linkBox{
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      background: rgba(0,0,0,.20);
+      border:1px solid rgba(255,255,255,.12);
+      color: rgba(245,245,247,.82);
+      font-size:12px;
+      word-break: break-all;
+    }
+    footer{margin-top:14px; color:rgba(245,245,247,.55); font-size:12px}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">🔥 野火社 Auto Service Club</div>
+      <div class="badge">📍 KL / Kajang / Bangi / PJ · 新手友好</div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h1>扫码直接进群</h1>
+        <p class="sub">
+          马来西亚留学生汽车俱乐部：真实修车/保养经验、车行避坑、车主交流聚会。<br>
+          用手机扫码二维码即可加入 WhatsApp 群聊。
+        </p>
+
+        <div class="qrWrap">
+          <div id="qrcode"></div>
+          <div class="hint">📱 用 WhatsApp 或相机扫码</div>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" id="joinBtn" href="#" target="_blank">🔥 直接打开进群链接</a>
+          <a class="btn" href="#poster">⬇️ 查看海报</a>
+        </div>
+
+        <div class="linkBox" id="linkBox"></div>
+        <footer>© <span id="y"></span> Wildfire Auto Service Club</footer>
+      </div>
+
+      <div class="card poster" id="poster">
+        <img src="poster.png" alt="野火社海报（poster.png）">
+      </div>
+    </div>
+  </div>
+
+  <!-- 生成二维码的轻量库（纯前端） -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script>
+    const GROUP_LINK = "https://chat.whatsapp.com/IHUDcvPcabC6WqQHSFIVuI";
+
+    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("joinBtn").href = GROUP_LINK;
+    document.getElementById("linkBox").textContent = "进群链接：" + GROUP_LINK;
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: GROUP_LINK,
+      width: 220,
+      height: 220,
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  </script>
+</body>
+</html>
