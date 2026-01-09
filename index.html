@@ -59,7 +59,9 @@
       padding:18px;
     }
     .poster img{
-      width:100%; border-radius:14px; display:block;
+      width:100%;
+      border-radius:14px;
+      display:block;
       border:1px solid rgba(255,255,255,.10);
     }
     h1{margin:0 0 8px; font-size:34px; line-height:1.12}
@@ -88,7 +90,12 @@
       border-radius:16px;
     }
     #qrcode canvas, #qrcode img{border-radius:12px}
-    .hint{margin-top:10px; color:var(--muted); font-size:13px; text-align:center}
+    .hint{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center
+    }
     .linkBox{
       margin-top:10px;
       padding:10px 12px;
@@ -99,7 +106,11 @@
       font-size:12px;
       word-break: break-all;
     }
-    footer{margin-top:14px; color:rgba(245,245,247,.55); font-size:12px}
+    footer{
+      margin-top:14px;
+      color:rgba(245,245,247,.55);
+      font-size:12px
+    }
   </style>
 </head>
 
@@ -107,14 +118,14 @@
   <div class="wrap">
     <div class="top">
       <div class="brand">🔥 野火社 Auto Service Club</div>
-      <div class="badge">📍 KL / Kajang / Bangi / PJ · 新手友好</div>
+      <div class="badge">📍 KL / Kajang / Cheras / Selangor / PJ / Puchong · 新手友好</div>
     </div>
 
     <div class="grid">
       <div class="card">
         <h1>扫码直接进群</h1>
         <p class="sub">
-          马来西亚留学生汽车俱乐部：真实修车/保养经验、车行避坑、车主交流聚会。<br>
+          马来西亚留学生汽车俱乐部：真实修车、保养经验、车行避坑、车主交流聚会。<br>
           用手机扫码二维码即可加入 WhatsApp 群聊。
         </p>
 
@@ -133,12 +144,11 @@
       </div>
 
       <div class="card poster" id="poster">
-        <img src="poster.png" alt="野火社海报（poster.png）">
+        <img src="poster.png" alt="野火社海报">
       </div>
     </div>
   </div>
 
-  <!-- 生成二维码的轻量库（纯前端） -->
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   <script>
     const GROUP_LINK = "https://chat.whatsapp.com/IHUDcvPcabC6WqQHSFIVuI";
@@ -156,3 +166,4 @@
   </script>
 </body>
 </html>
+
